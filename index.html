@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat on WhatsApp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+        
+        *:focus {
+            outline: none;
+        }
+
+        header {
+            height: 61px;
+            padding-top: 13px;
+            background-color: #1ebea5;
+            color: #fff;
+            width: 100%;
+            transition: background-color .5s ease;
+        }
+
+        .header-container {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .logo {
+            background-size: auto 35px;
+            background-image: url(https://static.xx.fbcdn.net/rsrc.php/yv/r/-r3j-x8ZnM7.svg);
+            background-repeat: no-repeat;
+            display: block;
+            height: 35px;
+            overflow: hidden;
+            padding: 0;
+            width: 35px;
+            float: left;
+        }
+
+        .header-label {
+            text-decoration: none;
+            color: #fff;
+            float: left;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 26px;
+            margin-left: 20px;
+            margin-top: 5px;
+            max-width: 66%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .main {
+            padding: 40px 32px;
+            overflow: auto;
+            height: 100vh;
+        }
+
+        h1 {
+            padding-top: 24px;
+            color: #232323;
+            font-size: 23px;
+            font-weight: 400;
+            line-height: 26px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        input {
+            margin: auto;
+            margin-bottom: 20px;
+            display: block;
+            padding: 7px;
+            border-radius: 5px;
+            border: 2px solid #d7d5d5;
+            font-size: 16px;
+        }
+
+        .sub-heading {
+            margin-bottom: 24px;
+            text-align: center;
+            color: #5e5e5e;
+        }
+
+        .submit {
+            border: none;
+            border-radius: 5px;
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .02em;
+            line-height: 19px;
+            padding: 9.5px 17px;
+            white-space: nowrap;
+            background-color: #01e675;
+            color: #fff !important;
+            margin: auto;
+            margin-bottom: 45px;
+        }
+
+        hr {
+            background: #dadde1;
+            border-width: 0;
+            color: #dadde1;
+            height: 1px;
+        }
+
+        .downloadContainer {
+            color: #5e5e5e;
+            font-size: 16px;
+            line-height: 26px;
+            margin-top: 45px;
+            text-align: center;
+        }
+
+        .download {
+            text-decoration: none;
+            color: #39b3ed;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a class="logo" href="https://www.whatsapp.com/"></a>
+            <a class="header-label" href="">Share on WhatsApp</a>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <h1>Chat on WhatsApp without saving the Phone Number</h1>
+            <input type="tel" autocomplete="off" id="phone" autofocus placeholder="(code) - Phone number">
+            <div class="sub-heading">Enter the Phone Number with Country Code</div>
+            <button class="submit" onclick="handleClick()">SUBMIT</button>
+            <hr />
+            <div class="downloadContainer">
+                Don't have WhatsApp yet?
+                <br />
+                <a href="https://www.whatsapp.com/download" class="download">Download</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function handleClick() {
+            let { value } = document.getElementById("phone");
+            if (value) window.location.href = `https://api.whatsapp.com/send?phone=${value}`;
+        }
+    </script>
+</body>
+
+</html>
